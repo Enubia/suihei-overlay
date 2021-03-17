@@ -21,7 +21,6 @@ const routes: Array<RouteConfig> = [
 ];
 
 const router = new VueRouter({
-  // base: '/suihei-Overlay',
   routes
 });
 

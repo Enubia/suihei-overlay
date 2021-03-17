@@ -1,6 +1,6 @@
 <template>
-  <div class="setting">
-    <h1>Settings page</h1>
+  <div class="bg-yellow-100 settings">
+    <h1 class="text-3xl">Settings page</h1>
   </div>
 </template>
 
