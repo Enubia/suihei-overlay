@@ -16,7 +16,9 @@ export default class Overlay extends Vue {
 
   openSettings() {
     const windowFeatures = `menubar=no,location=no,resizable=no,scrollbars=yes,status=no,width=700,height=400`;
-    this.configWindow = window.open('./suihei-overlay/#/settings', 'Suihei Config', windowFeatures);
+    const settingsPath =
+      process.env.NODE_ENV === 'development' ? './suihei-overlay/#/settings' : './#/settings';
+    this.configWindow = window.open(settingsPath, 'Suihei Config', windowFeatures);
     if (this.configWindow) {
       this.configWindow.focus();
       this.configWindow.onbeforeunload = () => {
