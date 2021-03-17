@@ -10,7 +10,12 @@ module.exports = {
     project: './tsconfig.json',
     extraFileExtensions: ['.vue']
   },
-  extends: ['airbnb-typescript', 'plugin:vue/strongly-recommended', 'plugin:vue-scoped-css/recommended', 'prettier'],
+  extends: [
+    'airbnb-typescript',
+    'plugin:vue/strongly-recommended',
+    'plugin:vue-scoped-css/recommended',
+    'prettier'
+  ],
   plugins: ['prettier', '@typescript-eslint', 'import', 'unicorn', 'vue'],
   rules: {
     'prettier/prettier': ['error'],
@@ -25,7 +30,10 @@ module.exports = {
 
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
 
-    'no-console': [process.env.NODE_ENV === 'production' ? 'error' : 'warn', { allow: ['warn', 'error'] }],
+    'no-console': [
+      process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+      { allow: ['warn', 'error'] }
+    ],
 
     'prefer-const': [
       'error',
@@ -106,7 +114,17 @@ module.exports = {
       'off',
       {
         props: true,
-        ignorePropertyModificationsFor: ['state', 'acc', 'e', 'ctx', 'req', 'request', 'res', 'response', '$scope']
+        ignorePropertyModificationsFor: [
+          'state',
+          'acc',
+          'e',
+          'ctx',
+          'req',
+          'request',
+          'res',
+          'response',
+          '$scope'
+        ]
       }
     ],
 
@@ -147,7 +165,8 @@ module.exports = {
         format: ['PascalCase'],
         prefix: ['I'],
         filter: {
-          regex: '^(Window|Vue|Context|NuxtAppOptions|VueConstructor|Navigator|Process|AxiosRequestConfig|Chainable)$',
+          regex:
+            '^(Window|Vue|Context|NuxtAppOptions|VueConstructor|Navigator|Process|AxiosRequestConfig|Chainable)$',
           match: false
         }
       }
