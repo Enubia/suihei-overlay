@@ -153,20 +153,19 @@ module.exports = {
       'error',
       'PascalCase',
       {
-        ignores: ['nuxt-link', 'nuxt', 'client-only', 'nuxt-child', 'nuxt-error', 'nuxt-loading']
+        ignores: ['client-only']
       }
     ],
 
     '@typescript-eslint/naming-convention': [
       'error',
-
       {
         selector: 'interface',
         format: ['PascalCase'],
         prefix: ['I'],
         filter: {
           regex:
-            '^(Window|Vue|Context|NuxtAppOptions|VueConstructor|Navigator|Process|AxiosRequestConfig|Chainable)$',
+            '^(Window|Vue|Context|VueConstructor|Navigator|Process|AxiosRequestConfig|Chainable)$',
           match: false
         }
       }
@@ -182,8 +181,14 @@ module.exports = {
   settings: {
     'import/core-modules': ['vue'],
     'import/resolver': {
-      node: {},
-      webpack: {}
+      webpack: {
+        extensions: ['.js', '.ts', '.json', '.vue'],
+        moduleDirectory: ['node_modules', 'src/']
+      },
+      node: {
+        extensions: ['.js', '.ts', '.json', '.vue'],
+        moduleDirectory: ['node_modules', 'src/']
+      }
     }
   }
 };

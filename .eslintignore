@@ -1,3 +1,4 @@
 tailwind.config.js
 vue.config.js
 .eslintrc.js
+webpack.config.js

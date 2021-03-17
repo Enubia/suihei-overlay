@@ -11,8 +11,23 @@ import { Component, Vue } from 'vue-property-decorator';
   name: 'Settings'
 })
 export default class Settings extends Vue {
+  refreshScrollableArea: any;
+
   created() {
-    console.log(this.$router.currentRoute);
+    window.addEventListener('resize', this.setWindowSize);
+  }
+
+  destroyed() {
+    window.removeEventListener('resize', this.setWindowSize);
+  }
+
+  setWindowSize(event: Event) {
+    event.preventDefault();
+
+    setTimeout(() => {
+      const { offsetWidth, offsetHeight } = document.querySelector('#app') as any;
+      localStorage.setItem('suihei-overlay', JSON.stringify({ offsetWidth, offsetHeight }));
+    }, 300);
   }
 }
 </script>
