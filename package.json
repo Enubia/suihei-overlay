@@ -7,7 +7,7 @@
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "eslint --fix --ext .ts,.vue src/"
   },
   "dependencies": {
     "vue": "^2.6.12",
