@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="Object.keys(overlayData).length > 0"
-    class="flex justify-center w-full"
+    class="flex justify-center w-full h-40"
     @contextmenu.prevent="openSettings"
   >
     <Encounter :detail="overlayData" />
