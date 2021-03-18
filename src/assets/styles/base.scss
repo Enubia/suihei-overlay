@@ -7,13 +7,12 @@
   font-family: 'Sarasa Gothic SC';
   font-style: normal;
   font-weight: 400;
-  src: url('https://github.com/bsides/horizoverlay/raw/chinesefont/src/css/fonts/sarasa-gothic-sc-regular.ttf'); /* IE9 Compat Modes */
+  src: url('https://github.com/bsides/horizoverlay/raw/chinesefont/src/css/fonts/sarasa-gothic-sc-regular.ttf');
   src: local('Sarasa Gothic SC'), local('SarasaGothic'),
     url('https://github.com/bsides/horizoverlay/raw/chinesefont/src/css/fonts/sarasa-gothic-sc-regular.woff')
       format('woff'),
-    /* Modern Browsers */
-      url('https://github.com/bsides/horizoverlay/raw/chinesefont/src/css/fonts/sarasa-gothic-sc-regular.ttf')
-      format('truetype'); /* Safari, Android, iOS */
+    url('https://github.com/bsides/horizoverlay/raw/chinesefont/src/css/fonts/sarasa-gothic-sc-regular.ttf')
+      format('truetype');
 }
 
 .resizable {
@@ -31,6 +30,7 @@
   background: transparent;
   overflow: hidden;
   border: 0ch;
+  // color: theme('colors.white');
 }
 
 body {

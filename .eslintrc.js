@@ -182,8 +182,7 @@ module.exports = {
     'import/core-modules': ['vue'],
     'import/resolver': {
       webpack: {
-        extensions: ['.js', '.ts', '.json', '.vue'],
-        moduleDirectory: ['node_modules', 'src/']
+        config: 'webpack.config.js'
       },
       node: {
         extensions: ['.js', '.ts', '.json', '.vue'],

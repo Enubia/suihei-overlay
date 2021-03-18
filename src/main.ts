@@ -4,7 +4,11 @@ import router from './router';
 import store from './store';
 
 import './assets/styles/base.scss';
-import './assets/images/handle.png';
+
+// uncomment this for development
+// import { testData } from './helper/config';
+
+// testData();
 
 Vue.config.productionTip = false;
 

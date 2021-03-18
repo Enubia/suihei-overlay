@@ -4,7 +4,7 @@
     class="flex justify-center w-full"
     @contextmenu.prevent="openSettings"
   >
-    {{ overlayData }}
+    <Encounter :detail="overlayData" />
   </div>
   <div v-else class="flex justify-center inactive w-full" @contextmenu.prevent="openSettings">
     <img alt="Vue logo" src="../assets/logo.png" />
@@ -13,21 +13,26 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Encounter from '@/components/Encounter.vue';
 import { defaultConfig } from '@/helper/config';
+import { IACTDetailData } from '@/types';
 
 @Component({
   name: 'Overlay',
-  components: {}
+  components: {
+    Encounter
+  }
 })
 export default class Overlay extends Vue {
   configWindow: Window | null = null;
 
-  overlayData = {};
+  overlayData: IACTDetailData = (window as any).mockData || {};
 
   isLocked: boolean = false;
 
   created() {
     document.addEventListener('onOverlayDataUpdate', (event: any) => {
+      console.log(event.detail);
       this.overlayData = event.detail;
     });
 
