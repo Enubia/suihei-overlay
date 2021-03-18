@@ -1,9 +1,8 @@
 <template>
   <div class="w-full">
     <Combatants :combatants="detail.Combatant" />
-    <div>
-      <span>Total DPS: </span>
-      <span>{{ detail.Encounter.encdps }}</span>
+    <div id="footer" class="flex justify-end pr-3">
+      <span>Total DPS: {{ detail.Encounter.encdps }}</span>
     </div>
   </div>
 </template>
@@ -24,4 +23,8 @@ export default class Encounter extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#footer {
+  text-shadow: #fc0 1px 0 10px;
+}
+</style>

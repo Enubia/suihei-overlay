@@ -1,6 +1,7 @@
 export interface ICombatant {
   n: string;
   t: string;
+  rank: number;
   name: string;
   duration: string;
   DURATION: number;

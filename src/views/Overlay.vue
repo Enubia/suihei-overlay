@@ -1,13 +1,18 @@
 <template>
   <div
     v-if="Object.keys(overlayData).length > 0"
-    class="flex justify-center w-full h-40"
+    :class="`flex justify-center w-full md:h-40 ${filled ? 'bg-gray-400' : null} border-gray-50`"
     @contextmenu.prevent="openSettings"
   >
     <Encounter :detail="overlayData" />
   </div>
-  <div v-else class="flex justify-center inactive w-full" @contextmenu.prevent="openSettings">
-    <img alt="Vue logo" src="../assets/logo.png" />
+  <div v-else class="inactive w-full" @contextmenu.prevent="openSettings">
+    <div class="m-2">
+      <span>Awaiting combat data</span>
+    </div>
+    <div class="m-2">
+      <span>Right click anywhere to open settings</span>
+    </div>
   </div>
 </template>
 
@@ -24,6 +29,8 @@ import { IACTDetailData } from '@/types';
   }
 })
 export default class Overlay extends Vue {
+  filled = false; // process.env?.NODE_ENV === 'development';
+
   configWindow: Window | null = null;
 
   overlayData: IACTDetailData = (window as any).mockData || {};
@@ -32,7 +39,6 @@ export default class Overlay extends Vue {
 
   created() {
     document.addEventListener('onOverlayDataUpdate', (event: any) => {
-      console.log(event.detail);
       this.overlayData = event.detail;
     });
 

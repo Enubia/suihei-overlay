@@ -81,6 +81,7 @@ export const mockData = {
       n: '\n',
       t: '\t',
       name: 'YOU',
+      rank: 1,
       duration: '03:20',
       DURATION: '200',
       damage: '262688',
@@ -169,6 +170,7 @@ export const mockData = {
       n: '\n',
       t: '\t',
       name: 'YOU',
+      rank: 4,
       duration: '03:20',
       DURATION: '200',
       damage: '262688',
@@ -257,6 +259,7 @@ export const mockData = {
       n: '\n',
       t: '\t',
       name: 'YOU',
+      rank: 6,
       duration: '03:20',
       DURATION: '200',
       damage: '262688',
@@ -345,6 +348,7 @@ export const mockData = {
       n: '\n',
       t: '\t',
       name: 'YOU',
+      rank: 2,
       duration: '03:20',
       DURATION: '200',
       damage: '262688',
@@ -433,6 +437,7 @@ export const mockData = {
       n: '\n',
       t: '\t',
       name: 'YOU',
+      rank: 3,
       duration: '03:20',
       DURATION: '200',
       damage: '262688',
@@ -521,6 +526,7 @@ export const mockData = {
       n: '\n',
       t: '\t',
       name: 'YOU',
+      rank: 5,
       duration: '03:20',
       DURATION: '200',
       damage: '262688',
@@ -609,6 +615,7 @@ export const mockData = {
       n: '\n',
       t: '\t',
       name: 'YOU',
+      rank: 7,
       duration: '03:20',
       DURATION: '200',
       damage: '262688',
@@ -697,6 +704,7 @@ export const mockData = {
       n: '\n',
       t: '\t',
       name: 'YOU',
+      rank: 8,
       duration: '03:20',
       DURATION: '200',
       damage: '262688',
@@ -836,7 +844,8 @@ export const testData = () => {
     document.dispatchEvent(event);
 
     totalDps = 0;
-  }, 3000);
 
-  (window as any).timer = timer;
+    // comment if you want changing data
+    clearInterval(timer);
+  }, 3000);
 };

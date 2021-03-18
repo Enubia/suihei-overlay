@@ -2,17 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css?family=Droid+Sans');
 @font-face {
   font-family: 'Sarasa Gothic SC';
   font-style: normal;
-  font-weight: 400;
-  src: url('https://github.com/bsides/horizoverlay/raw/chinesefont/src/css/fonts/sarasa-gothic-sc-regular.ttf');
-  src: local('Sarasa Gothic SC'), local('SarasaGothic'),
-    url('https://github.com/bsides/horizoverlay/raw/chinesefont/src/css/fonts/sarasa-gothic-sc-regular.woff')
-      format('woff'),
-    url('https://github.com/bsides/horizoverlay/raw/chinesefont/src/css/fonts/sarasa-gothic-sc-regular.ttf')
-      format('truetype');
+  font-weight: normal;
+  src: url('../fonts/sarasa-gothic-sc-regular.ttf') format('truetype'),
+    url('../fonts/sarasa-gothic-sc-regular.woff') format('woff');
 }
 
 .resizable {
@@ -31,6 +26,8 @@
 
 html,
 body {
+  font-family: 'Sarasa Gothic SC', Fallback, sans-serif;
+  color: theme('colors.white');
   height: 100%;
 
   .settings {
