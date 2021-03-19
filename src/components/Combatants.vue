@@ -1,5 +1,8 @@
 <template>
-  <div v-if="combatants && Object.keys(combatants).length > 0" class="md:flex w-full combatant">
+  <div
+    v-if="combatants && Object.keys(combatants).length > 0"
+    class="md:flex w-full combatant opacity-80"
+  >
     <div
       v-for="item of Object.keys(combatants)"
       :key="item"
@@ -7,7 +10,7 @@
       class="md:w-full mr-1 ml-1"
     >
       <div class="w-full">
-        <div class="flex md:justify-center text-xs relative">
+        <div class="flex md:justify-center -mb-4 md:-mb-0 text-xs relative">
           <img
             :src="require(`../assets/images/${combatants[item].Job.toLowerCase()}.png`)"
             :alt="combatants[item].Job.toLowerCase()"
@@ -15,23 +18,23 @@
           />
           <span class="ml-2 truncate">{{ item }}</span>
         </div>
-        <div class="damage-values flex justify-center w-full h-10 text-sm text-black">
+        <div class="damage-values flex justify-center h-10 text-sm text-black">
           <div
-            :class="`w-1/2 flex items-center justify-end pr-4 md:pr-0 md:justify-center h-2/3 md:h-full bg-${combatants[
+            :class="`w-1/2 flex items-center justify-end pr-4 md:pr-0 md:justify-center h-1/2 md:h-full bg-${combatants[
               item
             ].Job.toLowerCase()}-light`"
           >
             <span class="ml-2">HPS: {{ combatants[item].ENCHPS }}</span>
           </div>
           <div
-            :class="`w-1/2 flex items-center justify-center h-2/3 md:h-full bg-${combatants[
+            :class="`w-1/2 flex items-center justify-center h-1/2 md:h-full bg-${combatants[
               item
             ].Job.toLowerCase()}`"
           >
             <span class="mr-2">DPS: {{ combatants[item].ENCDPS }}</span>
           </div>
         </div>
-        <div class="text-righ text-xxs -mt-3 md:mt-0">
+        <div class="text-righ text-xxs -mt-5 md:mt-0">
           <div class="damage-percent-background">
             <div
               class="damage-percent-foreground"

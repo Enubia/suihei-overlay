@@ -794,32 +794,10 @@ export const mockData = {
 };
 
 export const testData = () => {
-  (window as any).mockData = mockData;
-
   function getRandom(min: number, max: number) {
     const first = Math.ceil(min);
     const last = Math.floor(max);
     return Math.floor(Math.random() * (last - first + 1)) + first;
-  }
-
-  let replaceWithRandom: {
-    ENCDPS: number;
-    'damage%': string;
-    'crithit%': string;
-    'healed%': string;
-    ENCHPS: number;
-    deaths: number;
-  };
-
-  function getNewRandom() {
-    replaceWithRandom = {
-      ENCDPS: getRandom(2200, 4500),
-      'damage%': `${getRandom(3, 28)}%`,
-      'crithit%': `${getRandom(0, 76)}%`,
-      'healed%': `${getRandom(0, 30)}%`,
-      ENCHPS: getRandom(0, 6000),
-      deaths: getRandom(0, 3)
-    };
   }
 
   const timer = setInterval(() => {
@@ -827,10 +805,19 @@ export const testData = () => {
     const combatant = mockData.Combatant;
 
     for (const i of Object.keys(combatant)) {
-      getNewRandom();
       // @ts-ignore
-      combatant[i] = { ...combatant[i], ...replaceWithRandom };
-      totalDps += replaceWithRandom.ENCDPS;
+      combatant[i] = {
+        // @ts-ignore
+        ...combatant[i],
+        ENCDPS: getRandom(2200, 4500),
+        'damage%': `${getRandom(3, 28)}%`,
+        'crithit%': `${getRandom(0, 76)}%`,
+        'healed%': `${getRandom(0, 30)}%`,
+        ENCHPS: getRandom(0, 6000),
+        deaths: getRandom(0, 3)
+      };
+      // @ts-ignore
+      totalDps += combatant[i].ENCDPS;
     }
 
     const event = new CustomEvent('onOverlayDataUpdate', {

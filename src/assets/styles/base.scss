@@ -14,6 +14,7 @@
   background-image: url(../images/handle.png);
   background-position: bottom right;
   background-repeat: no-repeat;
+  color: red;
 }
 
 * {
@@ -32,9 +33,5 @@ body {
 
   .settings {
     height: 100vh;
-  }
-
-  .inactive {
-    background: rgba(255, 255, 255, 0.05);
   }
 }

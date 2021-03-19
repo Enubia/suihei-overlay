@@ -1,8 +1,9 @@
 <template>
   <div class="w-full">
     <Combatants :combatants="detail.Combatant" />
-    <div id="footer" class="flex justify-end pr-3">
-      <span>Total DPS: {{ detail.Encounter.encdps }}</span>
+    <div id="footer" class="flex w-full pr-1 pl-1">
+      <div class="flex w-full justify-start">Duration: {{ detail.Encounter.duration }}</div>
+      <div class="flex w-full justify-end">Total DPS: {{ detail.Encounter.encdps }}</div>
     </div>
   </div>
 </template>

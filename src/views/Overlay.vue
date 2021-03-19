@@ -6,7 +6,7 @@
   >
     <Encounter :detail="overlayData" />
   </div>
-  <div v-else class="inactive w-full" @contextmenu.prevent="openSettings">
+  <div v-else class="inactive w-full text-sm" @contextmenu.prevent="openSettings">
     <div class="m-2">
       <span>Awaiting combat data</span>
     </div>
@@ -33,9 +33,7 @@ export default class Overlay extends Vue {
 
   configWindow: Window | null = null;
 
-  overlayData: IACTDetailData = (window as any).mockData || {};
-
-  isLocked: boolean = false;
+  overlayData = {} as IACTDetailData;
 
   created() {
     document.addEventListener('onOverlayDataUpdate', (event: any) => {
@@ -76,4 +74,9 @@ export default class Overlay extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.inactive {
+  color: rgba(209, 213, 219, 0.3);
+  text-shadow: rgba(255, 204, 0, 0.356) 1px 0 10px;
+}
+</style>
