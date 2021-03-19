@@ -18,9 +18,9 @@
           />
           <span class="ml-2 truncate">{{ item }}</span>
         </div>
-        <div class="damage-values flex justify-center h-10 text-sm text-black">
+        <div class="damage-values flex justify-center h-10 md:h-7 text-sm">
           <div
-            :class="`w-1/2 flex items-center justify-end pr-4 md:pr-0 md:justify-center h-1/2 md:h-full bg-${combatants[
+            :class="`sm:w-2/3 w-1/2 flex items-center justify-end pr-4 md:pr-0 md:justify-center h-1/2 md:h-full bg-${combatants[
               item
             ].Job.toLowerCase()}-light`"
           >
@@ -67,6 +67,7 @@ export default class Combatants extends Vue {
 
 <style lang="scss" scoped>
 .combatant {
+  min-width: 435px;
   text-shadow: #fc0 1px 0 10px;
 
   .damage-values {
@@ -79,7 +80,7 @@ export default class Combatants extends Vue {
 
     .damage-percent-foreground {
       height: 3px;
-      background: red;
+      background: #fc0;
     }
   }
 }
