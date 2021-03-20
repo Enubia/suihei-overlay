@@ -67,7 +67,7 @@ export default class Combatants extends Vue {
 
 <style lang="scss" scoped>
 .combatant {
-  min-width: 435px;
+  min-width: 300px;
   text-shadow: #fc0 1px 0 10px;
 
   .damage-values {

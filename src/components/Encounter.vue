@@ -3,7 +3,7 @@
     <Combatants :combatants="detail.Combatant" />
     <div id="footer" class="flex w-full pr-1 pl-1 text-xs">
       <div class="flex w-full justify-start">Duration: {{ detail.Encounter.duration }}</div>
-      <div class="flex w-full justify-center">{{ detail.Encounter.CurrentZoneName }}</div>
+      <div class="flex w-full justify-center truncate">{{ detail.Encounter.CurrentZoneName }}</div>
       <div class="flex w-full justify-end">Total DPS: {{ detail.Encounter.encdps }}</div>
     </div>
   </div>
