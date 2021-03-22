@@ -1,10 +1,10 @@
 # suihei-overlay
 
-Suihei overlay is a full responsive ACT overlay for FFXIV. You can either use it in a horizontal style or shrink it down and use it in a table like format. (Pictures will follow)
+Suihei overlay is a full responsive ACT overlay for FFXIV. You can either use it in a horizontal style or shrink it down and use it in a table like format.
 
 <img src="markdownImages/showcase.gif" width="1000">
 
-## https://enubia.github.io/suihei-overlay
+## Use this link in your overlay plugin ```https://enubia.github.io/suihei-overlay```
 
 It is heavily inspired by [Horizoverlay](https://github.com/bsides/horizoverlay) and [Kagerou](https://github.com/hibiyasleep/kagerou).
 
