@@ -3,12 +3,7 @@
     v-if="combatants && Object.keys(combatants).length > 0"
     class="lg:flex w-full combatant opacity-90"
   >
-    <div
-      v-for="item of Object.keys(combatants)"
-      :key="item"
-      :style="'order: ' + combatants[item].rank"
-      class="lg:w-full mr-1 ml-1"
-    >
+    <div v-for="item of Object.keys(combatants)" :key="item" class="lg:w-full mr-1 ml-1">
       <div class="w-full">
         <div class="flex lg:justify-center relative z-50 -mb-5 lg:-mb-0 text-xs">
           <img

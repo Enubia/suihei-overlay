@@ -20,7 +20,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Encounter from '@/components/Encounter.vue';
 import { defaultConfig } from '@/helper/config';
-import { IACTDetailData } from '@/types';
+import { IACTDetailData, ICombatant } from '@/types';
 
 @Component({
   name: 'Overlay',
@@ -35,7 +35,8 @@ export default class Overlay extends Vue {
 
   created() {
     document.addEventListener('onOverlayDataUpdate', (event: any) => {
-      this.overlayData = event.detail;
+      const combatants = this.sortCombatants(event);
+      this.overlayData = { ...event.detail, Combatant: combatants };
     });
 
     document.addEventListener('onOverlayStateUpdate', (event: any) => {
@@ -45,6 +46,27 @@ export default class Overlay extends Vue {
         document.documentElement.classList.add('resizable');
       }
     });
+  }
+
+  private sortCombatants(event: any): { [p: string]: ICombatant } {
+    const order = Object.keys(event.detail.Combatant).sort(
+      (a, b) => event.detail.Combatant[a].rank - event.detail.Combatant[b].rank
+    );
+
+    const ordered = {
+      ...order.map((item) => ({
+        [item]: event.detail.Combatant[item]
+      }))
+    };
+
+    const data: any = {};
+
+    Object.entries(ordered).forEach((entry) => {
+      const name = Object.keys(entry[1])[0];
+      data[name] = (entry[1] as any)[name];
+    });
+
+    return data;
   }
 
   openSettings() {
