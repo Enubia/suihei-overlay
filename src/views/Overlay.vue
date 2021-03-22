@@ -1,18 +1,18 @@
 <template>
   <div
     v-if="Object.keys(overlayData).length > 0"
-    :class="`flex justify-center w-full lg:h-40 ${filled ? 'bg-gray-400' : null} border-gray-50`"
+    class="flex justify-center w-full lg:h-auto pt-1 pb-1 overlay-background"
     @contextmenu.prevent="openSettings"
   >
     <Encounter :detail="overlayData" />
   </div>
-  <div v-else class="inactive w-full text-sm" @contextmenu.prevent="openSettings">
-    <div class="m-2">
-      <span>Awaiting combat data</span>
-    </div>
-    <div class="m-2">
-      <span>Right click anywhere to open settings</span>
-    </div>
+  <div
+    v-else
+    class="inactive w-full overlay-background text-sm"
+    @contextmenu.prevent="openSettings"
+  >
+    <div>Awaiting combat data</div>
+    <div>Right click anywhere to open settings</div>
   </div>
 </template>
 
@@ -29,8 +29,6 @@ import { IACTDetailData } from '@/types';
   }
 })
 export default class Overlay extends Vue {
-  filled = false; // process.env?.NODE_ENV === 'development';
-
   configWindow: Window | null = null;
 
   overlayData = {} as IACTDetailData;
@@ -76,7 +74,10 @@ export default class Overlay extends Vue {
 
 <style lang="scss" scoped>
 .inactive {
-  color: rgba(209, 213, 219, 0.3);
-  text-shadow: rgba(255, 204, 0, 0.356) 1px 0 10px;
+  color: rgba(79, 84, 90, 0.164);
+}
+
+.overlay-background {
+  background-color: rgba(27, 40, 53, 0.164);
 }
 </style>

@@ -16,11 +16,11 @@ Features implemented right now are:
 
 ### Roadmap
 
-| Features                                                                                    | Done               |
+| Features                                                                                    |                    |
 | ------------------------------------------------------------------------------------------- | ------------------ |
 | Basic parsing functionality                                                                 | :heavy_check_mark: |
-| More detailed encounter infos (includes overheal, crit, dh and critical direct hit numbers) | :x:                |
+| More detailed encounter infos (includes overheal, crit, dh and critical direct hit numbers) | :heavy_check_mark: |
 | Settings Page                                                                               | :x:                |
-| Death counter?                                                                              | :grey_question:    |
+| Death counter?                                                                              | :heavy_check_mark: |
 
 Suggestions are very welcome as well as bug reports. Just open an issue and let me know what needs to be done or, if you are able to, open a PR with your changes.

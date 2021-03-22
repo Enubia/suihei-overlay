@@ -809,12 +809,13 @@ export const testData = () => {
       combatant[i] = {
         // @ts-ignore
         ...combatant[i],
-        ENCDPS: getRandom(2200, 4500),
+        ENCDPS: getRandom(9000, 21000),
         'damage%': `${getRandom(3, 28)}%`,
         'crithit%': `${getRandom(0, 76)}%`,
         'healed%': `${getRandom(0, 30)}%`,
         ENCHPS: getRandom(0, 6000),
-        deaths: getRandom(0, 3)
+        deaths: getRandom(0, 3),
+        rank: getRandom(1, 8)
       };
       // @ts-ignore
       totalDps += combatant[i].ENCDPS;
