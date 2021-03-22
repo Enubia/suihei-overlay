@@ -8,9 +8,9 @@ import initActWebSocket from './helper/websocket';
 import './assets/styles/base.scss';
 
 // uncomment this for development
-import { testData } from './helper/config';
+// import { testData } from './helper/config';
 
-testData();
+// testData();
 
 initActWebSocket();
 
