@@ -420,7 +420,7 @@ export const mockData = {
       Last10DPS: '1526',
       Last30DPS: '1257',
       Last60DPS: '1335',
-      Job: 'Whm',
+      Job: 'Sch',
       ParryPct: '0%',
       BlockPct: '0%',
       IncToHit: '---',
