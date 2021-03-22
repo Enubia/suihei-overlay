@@ -2,7 +2,7 @@
 
 Suihei overlay is a full responsive ACT overlay for FFXIV. You can either use it in a horizontal style or shrink it down and use it in a table like format. (Pictures will follow)
 
-![Showcase](showcase.gif)
+<img src="markdownImages/showcase.gif" width="1000">
 
 ## https://enubia.github.io/suihei-overlay
 
@@ -19,5 +19,8 @@ Although right now it only provides bare minimum functionality, I plan to add mo
 | Death counter (lol)                                                                         | :heavy_check_mark: |
 | Raid DPS                                                                                    | :heavy_check_mark: |
 | Settings Page                                                                               | :x:                |
+
+![tableView](markdownImages/table.jpeg)
+![tableView](markdownImages/horizontal.jpeg)
 
 Suggestions are very welcome as well as bug reports. Just open an issue and let me know what needs to be done or, if you are able to, open a PR with your changes.
